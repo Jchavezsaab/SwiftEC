@@ -31,6 +31,14 @@ def conic_point(a, b, q, signs=[1,1,1,1,1,1]):
 		except ValueError:
 			cbrt_nu = None
 
+	# Special case a=0
+	# In this case the polynomials X0(u),Y0(u) are not needed.
+	# Instead, we use this space to store some precomputed constants
+	if a == 0:
+		X = [sqrt_m3, 1/F(2), 0]
+		Y = [0, 0]
+		Z = [1]
+		return X,Y,Z,5
 
 	# Case 1
 	if not sqrt_a and not cbrt_nu:
@@ -152,9 +160,9 @@ def main():
 
 	f = open("parameters/"+curve,'w')
 	for i in range(len(X)):
-		f.write(str(X[i]/Z[0])+"\n")
+		f.write(str(int(X[i]/Z[0]))+"\n")
 	for i in range(len(Y)):
-		f.write(str(Y[i]/Z[0])+"\n")
+		f.write(str(int(Y[i]/Z[0]))+"\n")
 	
 	f.write(str(4*a)+"\n")
 	f.write(str((p-1)>>1)+"\n")

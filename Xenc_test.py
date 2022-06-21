@@ -1,6 +1,11 @@
 from Xencoding import *
 
 def main():
+
+    if a == 0:
+        print("Error: for curves with a=0, call Xenc_test_0.py instead.")
+        exit(-1)
+
     E = EllipticCurve([0, 0, 0, a, b])
     x,y = E.random_point().xy()
     z = F.random_element()

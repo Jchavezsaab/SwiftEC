@@ -1,9 +1,9 @@
-from encoding import *
+from encoding_0 import *
 
 def main():
 
-    if a == 0:
-        print("Error: for curves with a=0, call enc_test_0.py instead.")
+    if a != 0:
+        print("Error: for curves with a!=0, call enc_test.py instead.")
         exit(-1)
 
     E = EllipticCurve([0, 0, 0, a, b])

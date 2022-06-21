@@ -4,7 +4,7 @@ from Xencoding import *
 """ 
 This file includes the parameters and isogeny implementations for cases
 where we want to compose the encoding with an isogeny, which allows us
-to reach even more curves.
+to reach even more curves. This should never be needed for a=0 curves.
 """
 
 if curve == "P25519":
@@ -21,14 +21,8 @@ if curve == "P25519":
     # Precomputed parameters for isomorphism:
     u2 = F(23721296059033526145801000401085370011607392691919421105305546723843314752618)
     r = F(38597363079105398474523661669562635951089994888546854679819194669304376384412)
-    #dual_u2 = F(144)
-    #dual_r = F(23359776)
     dual_u2 = F(36)
     dual_r = F(5839944)
-    # Precomputed torsion-8 points
-    torsion8 = [F(0), F(5839872), F(5840016), F(57896044618658097711785492504343953926634992332820282019728792003956553140061),
-                F(17914429955830250307951713923870105388213694254439359125275067418184700523041), F(17914429955830250307951713923870105388213694254439359125275067418184700523041),
-                F(39981614662827847403833778580473848538421298078380922894453724585771875976940), F(39981614662827847403833778580473848538421298078380922894453724585771875976940)]
 
     def isogeny(x,z):
 
@@ -105,6 +99,9 @@ if curve == "P25519":
 
 else:
     raise NotImplementedError("Isogeny for curve "+curve+" must be defined in isogenies.py")
+
+
+### The remaining functions are common to all curves (no need to edit)
 
 def decisog(u, t, s):
     x,z = Xdecode(u,t)
