@@ -44,6 +44,6 @@ Additionally, when using the isogeny trick, add the corresponding objects to iso
 
 ## Authors
 
-1. **Jorge Chávez-Saab** <jchavez@computacion.cs.cinvestav.mx>,
-2. **Francisco Rodríguez-Henríquez** <francisco@cs.cinvestav.mx>, 
+1. **Jorge Chávez-Saab** <jorge.saab@tii.ae>,
+2. **Francisco Rodríguez-Henríquez** <francisco.rodriguez@tii.ae>, 
 3. **Mehdi Tibouchi** <mehdi.tibouchi@normalesup.org>, 
